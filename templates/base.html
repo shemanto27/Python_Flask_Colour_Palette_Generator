@@ -18,9 +18,10 @@
     <main>
         <div class="form_section">
             <form action="{{ url_for("home") }}" method="post" enctype="multipart/form-data">   <!-- enctype is use to submit the form to the server,specifies how the form-data should be encoded when submitting it to the server.multipart/form-data	 This value is necessary if the user will upload a file through the form -->
-
-                <label for="image_upload">Choose Image to Upload(PNG,JPG or JPEG Format)</label>
-                <input type="file" name="raw_image" accept=".png, .jpg, .jpeg" required> <!-- Acceptable file types can be specified with the accept attribute -->
+                <div class="image_upload">
+                    <label for="image_upload">Choose Image to Upload(PNG,JPG or JPEG Format)</label>
+                    <input type="file" name="raw_image" accept=".png, .jpg, .jpeg" required> <!-- Acceptable file types can be specified with the accept attribute -->
+                </div>
 
                 <fieldset>
                     <legend>Select which Code You Want:</legend>
