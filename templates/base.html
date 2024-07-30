@@ -1,1 +1,33 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Palette Generator</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="shortcut icon" href="../static/a-unique-design-icon-of-dropper-vector.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Color Palette Generator From Image!🎨</h1>
+        <h5>Your favorite color palette generator tool from images.Generate 10 most used color in your image.You can generate Hexa code and RGB code directly.Just upload you image and see the magic🧙‍♀️</h5>
+
+    </header>
+    
+    
+    <main>
+        <div class="form_section">
+            <form action="{{ url_for("home") }}">
+                <input type="file" name="raw_image" accept=".png, .jpg, .jpeg">
+                <input type="radio">
+                <button type="submit"></button>
+            </form>
+        </div>
+    </main>
+    
+    
+    <footer></footer>
+
+
+</body>
+</html>
