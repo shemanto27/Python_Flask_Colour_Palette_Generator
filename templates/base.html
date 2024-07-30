@@ -36,7 +36,7 @@
         </div>
 
         <div class="result_section">
-            {% for i in range(len(color_list)) %}
+            {% for i in range(color_list|length) %} <!-- jinja length filter is used using pipe symbol (|) -->
 
                 {% if color_code == "rgb" %}
                     <div class="color" style="background-color: rgb{{ color_list[i] }};"></div>
@@ -61,3 +61,4 @@
 
 </body>
 </html>
+
