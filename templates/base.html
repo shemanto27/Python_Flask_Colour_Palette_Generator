@@ -10,23 +10,52 @@
 <body>
     <header>
         <h1>Color Palette Generator From Image!🎨</h1>
-        <h5>Your favorite color palette generator tool from images.Generate 10 most used color in your image.You can generate Hexa code and RGB code directly.Just upload you image and see the magic🧙‍♀️</h5>
+        <h5>Your favorite color palette generator tool from images.Generate 10 most used color in your image.You can generate Hex code and RGB code directly.Just upload you image and see the magic🧙‍♀️</h5>
 
     </header>
     
     
     <main>
         <div class="form_section">
-            <form action="{{ url_for("home") }}">
-                <input type="file" name="raw_image" accept=".png, .jpg, .jpeg">
-                <input type="radio">
-                <button type="submit"></button>
+            <form action="{{ url_for("home") }}" method="post" enctype="multipart/form-data">   <!-- enctype is use to submit the form to the server,specifies how the form-data should be encoded when submitting it to the server.multipart/form-data	 This value is necessary if the user will upload a file through the form -->
+
+                <label for="image_upload">Choose Image to Upload(PNG,JPG or JPEG Format)</label>
+                <input type="file" name="raw_image" accept=".png, .jpg, .jpeg" required> <!-- Acceptable file types can be specified with the accept attribute -->
+
+                <fieldset>
+                    <legend>Select which Code You Want:</legend>
+                    <input type="radio" name="color_code" value="rgb" checked>  
+                    <label for="RGB">RGB</label>      <!-- A radio group is defined by giving each of radio buttons in the group the same name -->
+                    <input type="radio" name="color_code" value="hex">
+                    <label for="Hex">Hex</label>
+                </fieldset>
+                
+                <button type="submit">Submit</button>
             </form>
         </div>
+
+        <div class="result_section">
+            {% for i in range(len(color_list)) %}
+
+                {% if color_code == "rgb" %}
+                    <div class="color" style="background-color: rgb{{ color_list[i] }};"></div>
+                    <div class="color_code">{{ i+1 }}: rgb{{ color_list[i] }}</div>
+
+                {% else %}
+                <div class="color" style="background-color: #{{ color_list[i] }};"></div>
+                <div class="color_code">{{ i+1 }}: #{{ color_list[i] }}</div>
+
+                {% endif %}
+
+            {% endfor %}
+        </div>
+
     </main>
     
     
-    <footer></footer>
+    <footer>
+        <p>Hey Curious 👋 I'm Shemanto Sharkar, the creator of Color Palette Generator. You can follow my work on <a href="https://www.linkedin.com/in/shemanto/" target="_blank">LinkedIn</a>.</p>
+    </footer>
 
 
 </body>
