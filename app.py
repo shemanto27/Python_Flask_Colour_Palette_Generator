@@ -34,16 +34,16 @@ def primary_color(file_path, code):
     sorted_unique_colors = dict(sorted(unique_colors.items(), key = lambda x:x[1], reverse=True))
     values = list(sorted_unique_colors.keys())
 
-    top_10 = values[0:10]
+    top_10_colors = values[0:10]
 
     if code == "hex":
         hex_list = []
-        for key in top_10:
+        for key in top_10_colors:
             hex = rgb_to_hex(key)
             hex_list.append(hex)
-            return hex_list
-        else:
-            return top_10
+        return hex_list
+    else:
+        return top_10_colors
 
 
 
