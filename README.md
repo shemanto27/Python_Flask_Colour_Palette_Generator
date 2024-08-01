@@ -21,5 +21,6 @@ A colour palette generator from images tool, built using Python Flask
 ## Demo
 
 Insert gif or link to demo
+![giphy](https://github.com/user-attachments/assets/e907afb4-bc28-48b6-8c1f-0f5edc8059e8)
 
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/aqvVbHYMGHrDpyz9WZ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/aqvVbHYMGHrDpyz9WZ">via GIPHY</a></p>
+
